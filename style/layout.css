@@ -1,11 +1,19 @@
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 body {
+    background-color: #1A0F0E;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-image: url(/image/ppjyzfwgu3bslgx649uvkwoixqqyaecyqhdumlgebllo3eacpfu8n08enom0fnhj-.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
 main {
