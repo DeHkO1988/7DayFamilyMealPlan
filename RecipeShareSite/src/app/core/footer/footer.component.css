@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Inter&display=swap');
+
+footer {
+    background-color: black;
+    border-top: 4px solid white;
+}
+
+footer .container {
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+footer ul {
+    display: flex;
+    gap: 4em;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+
+footer a {
+    display: none;
+}
+
+footer li {
+    display: block;
+    font-size: 1.5em;
+}
+footer h4 {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+}
