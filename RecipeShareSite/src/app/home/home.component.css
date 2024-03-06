@@ -1,0 +1,38 @@
+.home-page {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.home-page .container {
+    padding-right: 20em;
+    padding-bottom: 15em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    text-align: center;
+}
+
+ .container h1 {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 4em;
+    color: green;
+}
+
+.home-page .container h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.home-page a {
+    background-color: green;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+}
+
+app-home {
+    flex-grow: 1;
+}
