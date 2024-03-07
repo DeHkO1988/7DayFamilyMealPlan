@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { RecipeCatalogComponent } from './recipe-catalog/recipe-catalog.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    RecipeCatalogComponent,
   ],
   imports: [
     BrowserModule,
