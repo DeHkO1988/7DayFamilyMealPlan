@@ -56,6 +56,7 @@ input {
     border-radius: 0.2em;
     padding: 0 0.5em 0 0.5em;
     background-color: white;
+    cursor: pointer;
 }
 
 .register-form button:hover {
@@ -67,4 +68,6 @@ input {
         1px 1px 0 #000,
         1px -1px 0 #000,
         -1px -1px 0 #000;
+    color: white;
+    text-decoration: none;
 }
