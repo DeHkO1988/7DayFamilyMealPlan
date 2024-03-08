@@ -25,7 +25,11 @@ const routes: Routes = [{
 {
   path: "catalog",
   component: RecipeCatalogComponent,
-}
+},
+// {
+//   path: "**",
+//   redirectTo: "/404"
+// }
 ];
 
 @NgModule({
