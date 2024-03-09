@@ -14,6 +14,10 @@ export class UserApiService {
     return !!this.user
   };
 
+  get loggedUser() {
+    return this.user;
+  };
+
   constructor(private http: HttpClient) {
     try {
       const logInUser = localStorage.getItem('user') || "";
