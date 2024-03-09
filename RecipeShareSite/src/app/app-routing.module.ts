@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecipeCatalogComponent } from './recipe-catalog/recipe-catalog.component';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 const routes: Routes = [{
   path: "",
@@ -26,6 +27,10 @@ const routes: Routes = [{
   path: "catalog",
   component: RecipeCatalogComponent,
 },
+{
+  path: "createRecipe",
+  component: AddRecipeComponent,
+}
 // {
 //   path: "**",
 //   redirectTo: "/404"

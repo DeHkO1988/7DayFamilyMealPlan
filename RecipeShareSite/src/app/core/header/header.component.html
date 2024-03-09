@@ -13,7 +13,7 @@
                 <li routerLink="/login" *ngIf="!isLoggedIn"><a>Log In</a></li>
                 <li routerLink="/register" *ngIf="!isLoggedIn"><a>Register</a></li>
                 <li routerLink="/catalog"><a>Catalog</a></li>
-                <li routerLink="/create" *ngIf="isLoggedIn"><a>Add Recipe</a></li>
+                <li routerLink="/createRecipe" *ngIf="isLoggedIn"><a>Add Recipe</a></li>
                 <li routerLink="/about"><a>About</a></li>
                 <li (click)="logout()" *ngIf="isLoggedIn"><a>Logout</a></li>
             </ul>
