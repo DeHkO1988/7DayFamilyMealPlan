@@ -12,14 +12,16 @@ router.get('/create', (req, res) => {
 
 router.post('/create', isAuth, async (req, res) => {
 
-    const { name, species, skinColor, eyeColor, image, description } = req.body;
+    const { title, readyIn, ingredients, serves, image, description, owner } = req.body;
     //const ownerId = req.user._id;
 
     try {
-        //await creatureManager.create({ name, species, skinColor, eyeColor, image, description, owner: ownerId });
-        await creatureManager.create({ name, species, skinColor, eyeColor, image, description });
 
-        res.redirect('/creatures/allCreatures');
+        console.log("create");
+        //await creatureManager.create({ name, species, skinColor, eyeColor, image, description, owner: ownerId });
+        await creatureManager.create({ title, readyIn, ingredients, serves, image, description, owner });
+
+        //res.redirect('/creatures/allCreatures');
 
     } catch (error) {
 

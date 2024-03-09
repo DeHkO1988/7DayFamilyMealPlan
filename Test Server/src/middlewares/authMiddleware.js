@@ -9,9 +9,9 @@ exports.auth = async (req, res, next) => {
     if (token) {
         const decode = jwt.verify(token, SECRET, (err, verifiedToken) => {
             if (err) {
-                res.statusCode = 401;
+                //res.statusCode = 401;
 
-                res.sendStatus(res.statusCode);
+                res.send({error: "Unauthorized!!!"});
             } else {
                 next()
             }
@@ -30,9 +30,9 @@ exports.isAuth = (req, res, next) => {
 
     const decode = jwt.verify(token, SECRET, (err, verifiedToken) => {
         if (err) {
-            res.statusCode = 401;
+            //res.statusCode = 401;
 
-            res.sendStatus(res.statusCode);
+            res.send({error: "Unauthorized!!!"});
         } else {
             next() 
         }

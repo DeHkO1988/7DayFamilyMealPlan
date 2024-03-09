@@ -1,25 +1,24 @@
 const mongoose = require ('mongoose');
 
 const tokenSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required: true,
         minLength: [2, 'Name length less then two chars']
     },
-    species: {
+    readyIn: {
         type: String,
         required: true,
         minLength: 3
     },
-    skinColor: {
+    ingredients: {
         type: String,
         required: true,
         minLength: 3
     },
-    eyeColor: {
-        type: String,
+    serves: {
+        type: Number,
         required: true,
-        minLength: 3
     },
     image: {
         type: String,
@@ -32,7 +31,7 @@ const tokenSchema = new mongoose.Schema({
         minLength: 5,
         maxLength: 500,
     },
-    votes: [{
+    likes: [{
         type: mongoose.Types.ObjectId,
         ref: 'User',
     }],
