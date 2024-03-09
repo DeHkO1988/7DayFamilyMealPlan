@@ -1,0 +1,57 @@
+.add-recipe-page {
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.add-recipe-page .container {
+    width: 20%;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 1em;
+}
+
+.add-recipe {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: whitesmoke;
+    padding: 1.5em;
+    border: 1px solid black;
+}
+
+.add-recipe div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    flex-basis: 60%;
+}
+
+textarea {
+    height: 10em;
+}
+
+.add-recipe .button {
+    justify-content: center;
+    gap: 2em;
+}
+
+.add-recipe button {
+    font-size: 0.8em;
+    height: 45px;
+    border-radius: 0.2em;
+    padding: 0 0.5em 0 0.5em;
+    background-color: white;
+    cursor: pointer;
+    padding: 0 1.5em 0 1.5em;
+}
+
+.add-recipe button:hover {
+    background-color: lightblue;
+}
