@@ -11,12 +11,12 @@ export class HeaderComponent {
 
   constructor(private userService: UserApiService, private router: Router) { }
 
-    get isLoggedIn(): boolean {
-      return this.userService.isLogged
-    }
+  get isLoggedIn(): boolean {
+    return this.userService.isLogged
+  }
 
-    logout() {
-      this.userService.logout();
-      this.router.navigate(["/login"])
-    }
+  logout() {
+    this.userService.logout();
+    this.router.navigate(["/login"]);
+  }
 }

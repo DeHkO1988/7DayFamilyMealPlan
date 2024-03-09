@@ -1,25 +1,25 @@
 <div class="register-page">
     <div class="container">
-        <form class="register-form">
+        <div class="register-form">
             <h2>Registration Form</h2>
             <div>
                 <i class="fa-regular fa-user"></i>
-                <input type="text" placeholder="DeHkO" />
+                <input type="text" placeholder="DeHkO" #ngUsername/>
             </div>
             <div>
                 <i class="fa-regular fa-envelope"></i>
-                <input type="text" placeholder="deni@abv.bg" />
+                <input type="text" placeholder="deni@abv.bg" #ngEmail/>
             </div>
             <div>
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="*****" />
+                <input type="password" placeholder="*****" #ngPassword/>
             </div>
             <div>
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="*****" />
+                <input type="password" placeholder="*****" #ngRepeatPassword/>
             </div>
-            <button>Create Account</button>
+            <button (click)="register(ngUsername.value, ngEmail.value, ngPassword.value, ngRepeatPassword.value)">Create Account</button>
             <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
-        </form>
+        </div>
     </div>
 </div>

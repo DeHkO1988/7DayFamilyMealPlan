@@ -11,7 +11,6 @@ export class UserApiService {
   user: User | undefined;
 
   get isLogged(): boolean {
-    console.log(this.user)
     return !!this.user
   };
 
@@ -23,7 +22,7 @@ export class UserApiService {
     } catch (error) {
       this.user = undefined;
     }
-  }
+  };
 
   login(email: string, password: string) {
     const { appUrl } = environment;
@@ -39,10 +38,26 @@ export class UserApiService {
           'Content-Type': 'application/json'
         }
       });
-  }
+  };
 
   logout() {
-    this.user =undefined;
+    this.user = undefined;
     localStorage.removeItem("user");
+  };
+
+  register(username: string, email: string, password: string, repeatPassword: string) {
+    const { appUrl } = environment;
+    const body = {
+      username: username,
+      email: email,
+      password: password,
+      repeatPassword: repeatPassword
+    }
+
+    return this.http.post<User>(`${appUrl}/users/register`, JSON.stringify(body), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
   }
 }

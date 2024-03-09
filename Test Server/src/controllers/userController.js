@@ -36,11 +36,11 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res) => {
 
-    const { firstName, lastName, email, password, repeatPassword } = req.body;
+    const { username, email, password, repeatPassword } = req.body;
 
     try {
 
-        const token = await userManager.register({ firstName, lastName, email, password, repeatPassword });
+        const token = await userManager.register({ username, email, password, repeatPassword });
 
         //res.cookie('token', token);
 
