@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { RecipeCatalogComponent } from './recipe-catalog/recipe-catalog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     HomeComponent,
     RecipeCatalogComponent,
+    AddRecipeComponent,
   ],
   imports: [
     BrowserModule,
