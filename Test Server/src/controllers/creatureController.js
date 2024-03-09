@@ -22,6 +22,7 @@ router.post('/create', isAuth, async (req, res) => {
         await creatureManager.create({ title, readyIn, ingredients, serves, image, description, owner });
 
         //res.redirect('/creatures/allCreatures');
+        res.send({status: "ok"})
 
     } catch (error) {
 

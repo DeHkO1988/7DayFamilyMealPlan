@@ -7,9 +7,8 @@ const tokenSchema = new mongoose.Schema({
         minLength: [2, 'Name length less then two chars']
     },
     readyIn: {
-        type: String,
-        required: true,
-        minLength: 3
+        type: Number,
+        required: true
     },
     ingredients: {
         type: String,

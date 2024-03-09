@@ -14,7 +14,7 @@ export class UserApiService {
     return !!this.user
   };
 
-  get loggedUser() {
+  userInfo<User>() {
     return this.user;
   };
 

@@ -1,37 +1,37 @@
 <div class="add-recipe-page">
     <div class="container">
 
-        <form class="add-recipe">
+        <div class="add-recipe">
             <h2>Share a Recipe</h2>
             <div>
                 <label for="title">Recipe Name</label>
-                <input class="text" type="text" placeholder="title" />
+                <input class="text" type="text" placeholder="title" #ngTitle />
             </div>
             <div>
                 <label for="readyIn">Preparation Time</label>
-                <input class="text" type="text" placeholder="readyIn" />
+                <input class="text" type="number" placeholder="readyIn" #ngReadyIn/>
             </div>
             <div>
                 <label for="ingredients">Ingredients</label>
-                <input class="text" type="text" placeholder="ingredients" />
+                <input class="text" type="text" placeholder="ingredients" #ngIngredients/>
             </div>
             <div>
                 <label for="serves">No. of Servings</label>
-                <input class="text" type="number" placeholder="serves" />
+                <input class="text" type="number" placeholder="serves" #ngServes/>
             </div>
             <div>
                 <label for="image">Image Url</label>
-                <input class="text" type="text" placeholder="image" />
+                <input class="text" type="text" placeholder="image" #ngImage/>
             </div>
             <div>
                 <label for="description">Description</label>
-                <textarea class="text" name="description" placeholder="description"></textarea>
+                <textarea class="text" name="description" placeholder="description" #ngDescription></textarea>
             </div>
             <div class="button">
-                <button>Submit</button>
+                <button (click)="create(ngTitle.value, ngReadyIn.value, ngIngredients.value, ngServes.value, ngImage.value, ngDescription.value)">Submit</button>
                 <button routerLink="/catalog">Cancel</button>
             </div>
-        </form>
+        </div>
 
     </div>
 </div>

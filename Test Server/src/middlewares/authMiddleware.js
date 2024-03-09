@@ -26,7 +26,9 @@ exports.auth = async (req, res, next) => {
 
 exports.isAuth = (req, res, next) => {
 
-    const token = req.headers.token;
+    console.log(req.body)
+
+    const token = req.body.token;
 
     const decode = jwt.verify(token, SECRET, (err, verifiedToken) => {
         if (err) {
