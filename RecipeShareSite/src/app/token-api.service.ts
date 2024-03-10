@@ -37,8 +37,8 @@ export class TokenApiService {
 
     const { appUrl } = environment;
 
-    return this.http.get(`${appUrl}/creatures/allCreatures`);
-    
+    return this.http.get<Recipe[]>(`${appUrl}/creatures/allCreatures`);
+
   }
 
 

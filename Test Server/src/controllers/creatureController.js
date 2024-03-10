@@ -36,7 +36,7 @@ router.get('/allCreatures', async (req, res) => {
 
     const creatures = await creatureManager.getAll().lean();
 
-    res.send({ creatures });
+    res.send(creatures);
 });
 
 router.get('/:creatureId/details', async (req, res) => {
