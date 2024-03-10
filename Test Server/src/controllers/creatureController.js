@@ -22,7 +22,7 @@ router.post('/create', isAuth, async (req, res) => {
         await creatureManager.create({ title, readyIn, ingredients, serves, image, description, owner });
 
         //res.redirect('/creatures/allCreatures');
-        res.send({status: "ok"})
+        res.send({ status: "ok" })
 
     } catch (error) {
 
@@ -36,7 +36,7 @@ router.get('/allCreatures', async (req, res) => {
 
     const creatures = await creatureManager.getAll().lean();
 
-    res.render('allCreatures', { creatures });
+    res.send({ creatures });
 });
 
 router.get('/:creatureId/details', async (req, res) => {

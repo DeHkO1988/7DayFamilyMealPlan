@@ -33,6 +33,14 @@ export class TokenApiService {
     })
   }
 
+  getAll() {
+
+    const { appUrl } = environment;
+
+    return this.http.get(`${appUrl}/creatures/allCreatures`);
+    
+  }
+
 
 
 }
