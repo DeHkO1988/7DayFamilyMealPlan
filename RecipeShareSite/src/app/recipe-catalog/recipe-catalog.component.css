@@ -39,3 +39,9 @@ app-recipe-catalog {
 .app-recipe-catalog {
     flex-grow: 1;
 }
+
+.contend span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    color: green;
+}
