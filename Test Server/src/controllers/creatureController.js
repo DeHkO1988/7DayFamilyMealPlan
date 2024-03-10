@@ -12,14 +12,13 @@ router.get('/create', (req, res) => {
 
 router.post('/create', isAuth, async (req, res) => {
 
-    const { title, readyIn, ingredients, serves, image, description, owner } = req.body;
+    const { title, readyIn, ingredients, serves, image, description, owner, ownerUsername } = req.body;
     //const ownerId = req.user._id;
 
     try {
 
-        console.log("create");
         //await creatureManager.create({ name, species, skinColor, eyeColor, image, description, owner: ownerId });
-        await creatureManager.create({ title, readyIn, ingredients, serves, image, description, owner });
+        await creatureManager.create({ title, readyIn, ingredients, serves, image, description, owner, ownerUsername });
 
         //res.redirect('/creatures/allCreatures');
         res.send({ status: "ok" })

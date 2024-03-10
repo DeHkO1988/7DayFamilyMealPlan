@@ -9,6 +9,7 @@ export interface Recipe {
     //     type: mongoose.Types.ObjectId,
     //     ref: 'User',
     // }],
+    ownerUsername: string,
     likes:[],
     owner: string,
     error: string,

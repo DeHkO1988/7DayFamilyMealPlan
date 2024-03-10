@@ -16,6 +16,8 @@ export class TokenApiService {
   create(title: string, readyIn: string, ingredients: string, serves: string, image: string, description: string) {
     const { appUrl } = environment;
 
+    this.user = this.userService.userInfo();
+
     const body = {
       title,
       readyIn,
@@ -23,8 +25,12 @@ export class TokenApiService {
       serves,
       image,
       description,
+      ownerUsername: this.user?.username,
       owner: this.user?._id,
     }
+
+    console.log(this.user);
+    console.log(body)
 
     return this.http.post<Recipe>(`${appUrl}/creatures/create`, JSON.stringify({ ...body, token: this.user?.token }), {
       headers: {

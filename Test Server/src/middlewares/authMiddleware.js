@@ -29,7 +29,7 @@ exports.isAuth = (req, res, next) => {
     console.log(req.body)
 
     const token = req.body.token;
-
+    
     const decode = jwt.verify(token, SECRET, (err, verifiedToken) => {
         if (err) {
             //res.statusCode = 401;

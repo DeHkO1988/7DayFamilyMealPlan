@@ -1,4 +1,4 @@
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
 const tokenSchema = new mongoose.Schema({
     title: {
@@ -29,6 +29,10 @@ const tokenSchema = new mongoose.Schema({
         required: true,
         minLength: 5,
         maxLength: 500,
+    },
+    ownerUsername: {
+        type: String,
+        required: true,
     },
     likes: [{
         type: mongoose.Types.ObjectId,

@@ -2,11 +2,11 @@
     <div class="catalog">
         <div class="card" *ngFor="let recipe of allRecipes">
             <div class="media">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/800px-Good_Food_Display_-_NCI_Visuals_Online.jpg"
+                <img src={{recipe.image}}
                     alt="">
             </div>
             <div class="contend">
-                <h4>VEGETARIAN DINNER</h4>
+                <h4>RECIPE BY {{recipe.ownerUsername}} FOR</h4>
                 <h3>{{recipe.title}}</h3>
                 <div class="time-likes">
                     <p>{{recipe.readyIn}} min</p>

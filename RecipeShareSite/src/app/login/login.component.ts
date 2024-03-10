@@ -26,7 +26,7 @@ export class LoginComponent {
           this.err = false;
           this.userService.user = data;
           localStorage.setItem('user', JSON.stringify(data));
-          this.router.navigate(["/"])
+          this.router.navigate(["/"]);
         }
       },
       error: err => {

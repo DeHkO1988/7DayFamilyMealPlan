@@ -12,6 +12,10 @@ app-recipe-catalog {
     /* justify-content: center; */
 }
 
+.media {
+    height: 70%;
+}
+
 .card {
     flex-basis: 24%;
     background-color: white;

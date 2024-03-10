@@ -21,6 +21,7 @@ exports.login = async (email, password) => {
     let payload = {
         _id: user._id,
         email: user.email,
+        username: user.username
     };
 
     const token = await generateToken(payload);
@@ -44,6 +45,7 @@ exports.register = async (userData) => {
     let payload = {
         _id: newUser._id,
         email: newUser.email,
+        username: user.username
     }
 
     const token = await generateToken(newUser);
