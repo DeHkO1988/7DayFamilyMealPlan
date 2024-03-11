@@ -9,8 +9,11 @@
                 <h4>RECIPE BY <span>{{recipe.ownerUsername}}</span> FOR</h4>
                 <h3>{{recipe.title}}</h3>
                 <div class="time-likes">
-                    <p>{{recipe.readyIn}} min</p>
-                    <p>{{recipe.likes.length}} likes</p>
+                    <p><i class="fa-regular fa-clock"></i> {{recipe.readyIn}} min</p>
+                    <p>{{recipe.likes.length}} <i class="fa-regular fa-thumbs-up"></i></p>
+                </div>
+                <div class="btn">
+                    <a href="#">Details</a>
                 </div>
             </div>
         </div>

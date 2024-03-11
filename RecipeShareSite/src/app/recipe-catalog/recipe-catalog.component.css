@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 app-recipe-catalog {
     display: flex;
     flex-grow: 1;
@@ -9,7 +11,6 @@ app-recipe-catalog {
     flex-wrap: wrap;
     max-height: 100%;
     gap: 1.3em;
-    /* justify-content: center; */
 }
 
 .media {
@@ -21,6 +22,8 @@ app-recipe-catalog {
     background-color: white;
     border-radius: 0.2em;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -40,8 +43,63 @@ app-recipe-catalog {
     flex-grow: 1;
 }
 
-.contend span {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.contend {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em
+}
+
+.contend h3 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.contend h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+}
+
+.contend span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.2em;
     color: green;
+}
+
+.time-likes {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+}
+
+.contend .btn {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.contend .btn a {
+    display: block;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: white;
+    border-radius: 0.3em;
+    background-color: black;
+}
+
+.contend .btn a:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
 }
