@@ -45,7 +45,7 @@ exports.register = async (userData) => {
     let payload = {
         _id: newUser._id,
         email: newUser.email,
-        username: user.username
+        username: newUser.username
     }
 
     const token = await generateToken(newUser);

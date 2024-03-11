@@ -12,10 +12,10 @@ export class RegisterComponent {
   constructor(private userService: UserApiService, private router: Router) { }
 
   register(username: string, email: string, password: string, repeatPassword: string): void {
-
     this.userService.register(username, email, password, repeatPassword).subscribe({
       next: data => {
         if (data.error) {
+          console.log(data.error);
           return
         } else {
           this.userService.user = data;
