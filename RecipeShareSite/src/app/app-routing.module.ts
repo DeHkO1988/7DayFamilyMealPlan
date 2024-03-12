@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecipeCatalogComponent } from './recipe-catalog/recipe-catalog.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { DetailRecipeComponent } from './detail-recipe/detail-recipe.component';
 
 const routes: Routes = [{
   path: "",
@@ -30,6 +31,10 @@ const routes: Routes = [{
 {
   path: "createRecipe",
   component: AddRecipeComponent,
+},
+{
+  path: "details/:id",
+  component: DetailRecipeComponent,
 }
 // {
 //   path: "**",
