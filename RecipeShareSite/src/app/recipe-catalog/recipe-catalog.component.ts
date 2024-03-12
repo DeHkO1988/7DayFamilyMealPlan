@@ -19,7 +19,6 @@ export class RecipeCatalogComponent implements OnInit {
   ngOnInit(): void {
     this.tokenApiService.getAll().subscribe(data => {
       this.allRecipes = data
-      console.log(this.allRecipes);
     })
   }
 }
