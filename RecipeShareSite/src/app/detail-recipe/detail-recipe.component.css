@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.details {
+    background-color: whitesmoke;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0 3em;
+    border: 1px solid black;
+}
+
+.details header {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.details header h1 {
+    font-size: 3em;
+}
+
+.details header p {
+    font-size: 2em;
+    font-style: italic;
+}
+
+.details .media {
+    padding: 1em 1em 2em 1em;
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+
+.details .information {
+    border: 1px solid #E7A944;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 3em;
+    border-radius: 0.3em;
+    border-top: 1em solid #E7A944;
+    font-size: 1.2em;
+    background-color: whitesmoke;
+
+}
+
+.details .information span {
+    text-decoration: underline;
+}
+
+.details .description,
+.details .ingredients {
+    padding: 1em 1em;
+    font-size: 1.5em;
+    background-color: whitesmoke;
+    border: 1px solid #E7A944;
+    border-radius: 0.3em;
+    text-align: justify;
+}
+
+.details .ingredients p {
+    font-style: italic;
+}
+
+.details .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+}
+
+.details .buttons button {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    padding: 0.2em 1em;
+    font-weight: bold;
+    width: 8em;
+    color: white;
+    border-radius: 0.3em;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.details .buttons button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transition: 1000ms;
+    cursor: pointer;
+}
