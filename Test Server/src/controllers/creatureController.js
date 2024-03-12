@@ -40,25 +40,28 @@ router.get('/allCreatures', async (req, res) => {
 
 router.get('/:creatureId/details', async (req, res) => {
 
-    const userId = req.user?._id
+    console.log(req.params)
+
+    //const userId = req.user?._id
 
     const creatureId = req.params.creatureId;
 
     const creature = await creatureManager.getOne(creatureId).lean();
 
-    const isOwner = await isOwnerCheck(userId, creatureId);
+    //const isOwner = await isOwnerCheck(userId, creatureId);
 
-    let voters = [];
+    // let voters = [];
 
-    creature.votes.forEach(x => {
-        voters.push(x.email);
-    });
+    // creature.votes.forEach(x => {
+    //     voters.push(x.email);
+    // });
 
-    const isUserVoted = voters.includes(req.user?.email);
+    // const isUserVoted = voters.includes(req.user?.email);
 
-    const voterEmails = voters.join(', ')
+    // const voterEmails = voters.join(', ')
 
-    res.render('details', { creature, isOwner, isUserVoted, voters, voterEmails });
+    // res.render('details', { creature, isOwner, isUserVoted, voters, voterEmails });
+    res.send(creature);
 });
 
 router.get('/:creatureId/delete', isAuth, async (req, res) => {
