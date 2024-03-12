@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { UserApiService } from './user-api.service';
 import { environment } from 'src/environments/environment.development';
 import { Recipe } from './types/recipe';
+import { User } from './types/user';
 
 @Injectable({
   providedIn: 'root'
@@ -47,12 +48,25 @@ export class TokenApiService {
 
   }
 
-  getOne(id:string) {
+  getOne(id: string) {
 
     const { appUrl } = environment;
 
     return this.http.get<Recipe>(`${appUrl}/creatures/${id}/details`);
-     
+
+  }
+
+  delete(id: string, user: User | undefined) {
+    const { appUrl } = environment;
+
+    return this.http.get(`${appUrl}/creatures/${id}/delete`, {
+      headers: {
+        'Content-Type': 'application/json',
+        // 'owner': JSON.stringify(this.user?._id),
+        'owner': JSON.stringify(user?._id),
+        'userToken': JSON.stringify(user?.token)
+      }
+    })
   }
 
 

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenApiService } from '../token-api.service';
 import { Recipe } from '../types/recipe';
 import { UserApiService } from '../user-api.service';
+import { User } from '../types/user';
 
 @Component({
   selector: 'app-detail-recipe',
@@ -35,7 +36,7 @@ export class DetailRecipeComponent implements OnInit {
 
   isLoggedIn: boolean = false;
 
-  constructor(private route: ActivatedRoute, private tokenApiService: TokenApiService, private userService: UserApiService) { }
+  constructor(private route: ActivatedRoute, private tokenApiService: TokenApiService, private userService: UserApiService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params["id"];
@@ -45,6 +46,14 @@ export class DetailRecipeComponent implements OnInit {
     this.tokenApiService.getOne(id).subscribe(data => {
       this.recipe = data;
       this.isOwner = user?._id === data.owner?._id
+    })
+  }
+
+  deleteHandler(): void {
+    const id = this.route.snapshot.params["id"];
+    const user = this.userService.userInfo();
+    this.tokenApiService.delete(id, user).subscribe(data => {
+      this.router.navigate(["/catalog"])
     })
   }
 }

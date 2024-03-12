@@ -42,7 +42,7 @@ router.get('/:creatureId/details', async (req, res) => {
 
     //const userId = req.user?._id
 
-    const creatureId = req.params.creatureId; 
+    const creatureId = req.params.creatureId;
 
     const creature = await creatureManager.getOne(creatureId).lean();
 
@@ -64,17 +64,21 @@ router.get('/:creatureId/details', async (req, res) => {
 
 router.get('/:creatureId/delete', isAuth, async (req, res) => {
 
-    const userId = req.user._id;
+    const userId = JSON.parse(req.headers.owner);
     const creatureId = req.params.creatureId;
     const isOwner = await isOwnerCheck(userId, creatureId);
+
+    //console.log(userId);
+    // console.log(creatureId);
 
     if (isOwner) {
 
         await creatureManager.delete(creatureId);
 
-        res.redirect('/creatures/allCreatures')
+        res.send({ status: "Ok" });
+
     } else {
-        res.redirect('/users/login');
+        res.send({ error: "You are not the owner!!!" });
     }
 
 });

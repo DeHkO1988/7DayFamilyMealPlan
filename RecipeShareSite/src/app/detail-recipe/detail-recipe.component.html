@@ -27,7 +27,7 @@
         <div class="buttons">
             <button *ngIf="isLoggedIn && !isOwner">Like</button>
             <button *ngIf="isOwner">Edit</button>
-            <button *ngIf="isOwner">Delete</button>
+            <button (click)="deleteHandler()" *ngIf="isOwner">Delete</button>
         </div>
     </div>
 </div>

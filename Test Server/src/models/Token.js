@@ -28,7 +28,7 @@ const tokenSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: 5,
-        maxLength: 500,
+        maxLength: 1500,
     },
     ownerUsername: {
         type: String,
