@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { RecipeCatalogComponent } from './recipe-catalog/recipe-catalog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { DetailRecipeComponent } from './detail-recipe/detail-recipe.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     HomeComponent,
     RecipeCatalogComponent,
     AddRecipeComponent,
+    DetailRecipeComponent,
   ],
   imports: [
     BrowserModule,

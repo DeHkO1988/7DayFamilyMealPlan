@@ -1,4 +1,5 @@
 export interface Recipe {
+    _id: string,
     title: string,
     readyIn: string,
     ingredients: string,
@@ -10,7 +11,7 @@ export interface Recipe {
     //     ref: 'User',
     // }],
     ownerUsername: string,
-    likes:[],
+    likes: [],
     owner: string,
     error: string,
 }
