@@ -1,35 +1,33 @@
 <div class="container">
     <div class="details">
         <header>
-            <h1>Title</h1>
-            <p>Presented by Username</p>
+            <h1>{{recipe.title}}</h1>
+            <p>Presented by {{recipe.ownerUsername}}</p>
         </header>
         <div class="media">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXrsENFPRTdSZW-7w91Vr8rlny726PoSIOFg&usqp=CAU"
+            <img src={{recipe.image}}
                 alt="">
         </div>
         <div class="information">
-            <p><span><b>Cook Time:</b></span><br>45 min</p>
-            <p><span><b>Servings:</b></span><br>10</p>
-            <p><span><b>Likes:</b></span><br>100</p>
+            <p><span><b>Cook Time:</b></span><br>{{recipe.readyIn}} min</p>
+            <p><span><b>Servings:</b></span><br>{{recipe.serves}}</p>
+            <p><span><b>Likes:</b></span><br>{{recipe.likes.length}}</p>
         </div>
 
         <div class="ingredients">
             <h2>Ingredients</h2>
-            <p>4 cups all-purpose flour, ½ cup margarine or butter, softened, 4 tablespoons white sugar, 1 teaspoon
-                baking
-                soda</p>
+            <p>{{recipe.ingredients}}</p>
         </div>
 
         <div class="description">
             <h2>How to make Title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, consequatur?</p>
+            <p>{{recipe.description}}</p>
         </div>
 
         <div class="buttons">
-            <button>Like</button>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button *ngIf="isLoggedIn && !isOwner">Like</button>
+            <button *ngIf="isOwner">Edit</button>
+            <button *ngIf="isOwner">Delete</button>
         </div>
     </div>
 </div>

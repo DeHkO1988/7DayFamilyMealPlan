@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export interface Recipe {
     _id: string,
     title: string,
@@ -12,6 +14,6 @@ export interface Recipe {
     // }],
     ownerUsername: string,
     likes: [],
-    owner: string,
+    owner: User,
     error: string,
 }

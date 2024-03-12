@@ -47,6 +47,14 @@ export class TokenApiService {
 
   }
 
+  getOne(id:string) {
+
+    const { appUrl } = environment;
+
+    return this.http.get<Recipe>(`${appUrl}/creatures/${id}/details`);
+     
+  }
+
 
 
 }

@@ -40,11 +40,9 @@ router.get('/allCreatures', async (req, res) => {
 
 router.get('/:creatureId/details', async (req, res) => {
 
-    console.log(req.params)
-
     //const userId = req.user?._id
 
-    const creatureId = req.params.creatureId;
+    const creatureId = req.params.creatureId; 
 
     const creature = await creatureManager.getOne(creatureId).lean();
 

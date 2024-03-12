@@ -4,7 +4,7 @@ exports.create = (tokenData) => Token.create(tokenData);
 
 exports.getAll = () => Token.find();
 
-exports.getOne = (tokenId) => Token.findById(tokenId).populate('owner').populate('votes');
+exports.getOne = (tokenId) => Token.findById(tokenId).populate('owner').populate('likes');
 
 exports.delete = (tokenId) => Token.findByIdAndDelete(tokenId);
 
