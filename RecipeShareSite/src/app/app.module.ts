@@ -11,6 +11,7 @@ import { RecipeCatalogComponent } from './recipe-catalog/recipe-catalog.componen
 import { HttpClientModule } from '@angular/common/http';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { DetailRecipeComponent } from './detail-recipe/detail-recipe.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { DetailRecipeComponent } from './detail-recipe/detail-recipe.component';
     RecipeCatalogComponent,
     AddRecipeComponent,
     DetailRecipeComponent,
+    EditRecipeComponent,
   ],
   imports: [
     BrowserModule,
