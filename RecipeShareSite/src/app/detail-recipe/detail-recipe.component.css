@@ -72,7 +72,8 @@
     margin-top: 1em;
 }
 
-.details .buttons button {
+.details .buttons button,
+.details .buttons a {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: 1.3em;
@@ -85,10 +86,16 @@
     border: 1px solid black;
 }
 
-.details .buttons button:hover {
+.details .buttons button:hover,
+.details .buttons a:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
     transition: 1000ms;
     cursor: pointer;
+}
+
+.details .buttons a {
+    text-align: center;
+    text-decoration: none;
 }

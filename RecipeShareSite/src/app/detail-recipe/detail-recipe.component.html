@@ -26,7 +26,7 @@
 
         <div class="buttons">
             <button *ngIf="isLoggedIn && !isOwner">Like</button>
-            <button *ngIf="isOwner">Edit</button>
+            <a *ngIf="isOwner" routerLink="/edit/{{recipe._id}}">Edit</a>
             <button (click)="deleteHandler()" *ngIf="isOwner">Delete</button>
         </div>
     </div>

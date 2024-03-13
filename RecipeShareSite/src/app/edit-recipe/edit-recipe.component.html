@@ -1,1 +1,37 @@
-<p>edit-recipe works!</p>
+<div class="edit-recipe-page">
+    <div class="container">
+
+        <div class="edit-recipe">
+            <h2>Edit Recipe</h2>
+            <div>
+                <label for="title">Recipe Name</label>
+                <input class="text" type="text" placeholder="title" value="denis" #ngTitle />
+            </div>
+            <div>
+                <label for="readyIn">Preparation Time</label>
+                <input class="text" type="number" placeholder="readyIn" value="123" #ngReadyIn />
+            </div>
+            <div>
+                <label for="ingredients">Ingredients</label>
+                <input class="text" type="text" placeholder="ingredients" #ngIngredients />
+            </div>
+            <div>
+                <label for="serves">No. of Servings</label>
+                <input class="text" type="number" placeholder="serves" #ngServes />
+            </div>
+            <div>
+                <label for="image">Image Url</label>
+                <input class="text" type="text" placeholder="image" #ngImage />
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea class="text" name="description" placeholder="description" #ngDescription></textarea>
+            </div>
+            <div class="button">
+                <button>Edit</button>
+                <button routerLink="/catalog">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
