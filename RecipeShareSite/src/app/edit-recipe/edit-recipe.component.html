@@ -5,27 +5,27 @@
             <h2>Edit Recipe</h2>
             <div>
                 <label for="title">Recipe Name</label>
-                <input class="text" type="text" placeholder="title" value="denis" #ngTitle />
+                <input class="text" type="text" placeholder="title" value="{{currentRecipeInfo?.title}}" #ngTitle />
             </div>
             <div>
                 <label for="readyIn">Preparation Time</label>
-                <input class="text" type="number" placeholder="readyIn" value="123" #ngReadyIn />
+                <input class="text" type="number" placeholder="readyIn" value="{{currentRecipeInfo?.readyIn}}" #ngReadyIn />
             </div>
             <div>
                 <label for="ingredients">Ingredients</label>
-                <input class="text" type="text" placeholder="ingredients" #ngIngredients />
+                <input class="text" type="text" placeholder="ingredients" value="{{currentRecipeInfo?.ingredients}}" #ngIngredients />
             </div>
             <div>
                 <label for="serves">No. of Servings</label>
-                <input class="text" type="number" placeholder="serves" #ngServes />
+                <input class="text" type="number" placeholder="serves" value="{{currentRecipeInfo?.serves}}" #ngServes />
             </div>
             <div>
                 <label for="image">Image Url</label>
-                <input class="text" type="text" placeholder="image" #ngImage />
+                <input class="text" type="text" placeholder="image" value="{{currentRecipeInfo?.image}}" #ngImage />
             </div>
             <div>
                 <label for="description">Description</label>
-                <textarea class="text" name="description" placeholder="description" #ngDescription></textarea>
+                <textarea class="text" name="description" placeholder="description" value="{{currentRecipeInfo?.description}}" #ngDescription></textarea>
             </div>
             <div class="button">
                 <button>Edit</button>
