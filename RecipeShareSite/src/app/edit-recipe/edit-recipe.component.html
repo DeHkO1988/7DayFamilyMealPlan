@@ -28,7 +28,7 @@
                 <textarea class="text" name="description" placeholder="description" value="{{currentRecipeInfo?.description}}" #ngDescription></textarea>
             </div>
             <div class="button">
-                <button>Edit</button>
+                <button (click)="update(ngTitle.value, ngReadyIn.value, ngIngredients.value, ngServes.value, ngImage.value, ngDescription.value)">Edit</button>
                 <button routerLink="/catalog">Cancel</button>
             </div>
         </div>

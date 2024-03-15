@@ -3,6 +3,7 @@ const jwt = require('njwt');
 const { SECRET } = require('../config/config');
 
 exports.auth = async (req, res, next) => {
+
     //const token = req.cookies['token'];
     const token = req.headers.token;
 

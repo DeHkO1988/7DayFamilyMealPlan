@@ -101,27 +101,27 @@ router.get('/:creatureId/edit', isAuth, async (req, res) => {
 
 router.post('/:creatureId/edit', isAuth, async (req, res) => {
 
-    const userId = req.user._id;
+    const userId = req.body.userId;
     const creatureId = req.params.creatureId;
     const isOwner = await isOwnerCheck(userId, creatureId);
     const newData = req.body;
-    const creature = await creatureManager.getOne(creatureId).lean();
+    //const creature = await creatureManager.getOne(creatureId).lean();
 
     try {
         if (isOwner) {
 
             await creatureManager.update(creatureId, newData);
 
-            res.redirect(`/creatures/${creatureId}/details`);
+            res.send({status: "Ok, updated!"});
 
         } else {
 
-            res.redirect('/users/logIn');
+            res.send({error: "You are not the owner"});
 
         }
 
     } catch (error) {
-        res.render('edit', { creature, error: getErrorMessage(error) });
+        res.send({error: getErrorMessage(error)});
     }
 
 

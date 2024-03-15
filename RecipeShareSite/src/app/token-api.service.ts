@@ -30,8 +30,8 @@ export class TokenApiService {
       owner: this.user?._id,
     }
 
-    console.log(this.user);
-    console.log(body)
+    // console.log(this.user);
+    // console.log(body)
 
     return this.http.post<Recipe>(`${appUrl}/creatures/create`, JSON.stringify({ ...body, token: this.user?.token }), {
       headers: {
@@ -67,6 +67,32 @@ export class TokenApiService {
         'userToken': JSON.stringify(user?.token)
       }
     })
+  }
+
+  update(title: string, readyIn: string, ingredients: string, serves: string, image: string, description: string, recipeId: string) {
+
+    const { appUrl } = environment;
+
+    this.user = this.userService.userInfo();
+
+    const body = {
+      title,
+      readyIn,
+      ingredients,
+      serves,
+      image,
+      description,
+      // ownerUsername: this.user?.username,
+      // owner: this.user?._id,
+    }
+
+    return this.http.post<Recipe>(`${appUrl}/creatures/${recipeId}/edit`, JSON.stringify({...body, token: this.user?.token, userId: this.user?._id}), {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+
+
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenApiService } from '../token-api.service';
 import { Recipe } from '../types/recipe';
 
@@ -12,7 +12,7 @@ export class EditRecipeComponent implements OnInit {
 
   currentRecipeInfo: Recipe | undefined = undefined;
 
-  constructor(private route: ActivatedRoute, private tokenService: TokenApiService) { }
+  constructor(private route: ActivatedRoute, private tokenService: TokenApiService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -23,6 +23,20 @@ export class EditRecipeComponent implements OnInit {
     })
 
 
+  }
+
+  update(title: string, readyIn: string, ingredients: string, serves: string, image: string, description: string): void {
+
+    const recipeId = this.route.snapshot.params["id"];
+
+    this.tokenService.update(title, readyIn, ingredients, serves, image, description, recipeId).subscribe(data => {
+      if (data.error) {
+        console.log(data.error)
+        return;
+      } else {
+        this.router.navigate([`/details/${recipeId}`]);
+      }
+    })
   }
 
 }
