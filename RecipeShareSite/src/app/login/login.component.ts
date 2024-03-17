@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserApiService } from '../user-api.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,14 @@ export class LoginComponent {
 
   constructor(private userService: UserApiService, private router: Router) { }
 
-  login(email: string, password: string): void {
+  login(form: NgForm): void {
 
-    this.userService.login(email, password).subscribe({
+    if(form.invalid) {
+      return;
+    }
+
+
+    this.userService.login(form).subscribe({
       next: data => {
         if (data.error) {
           this.errMsg = data.error

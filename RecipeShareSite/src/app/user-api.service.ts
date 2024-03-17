@@ -29,12 +29,12 @@ export class UserApiService {
     }
   };
 
-  login(email: string, password: string) {
+  login(form: NgForm) {
     const { appUrl } = environment;
 
     const body = {
-      email: email,
-      password: password
+      email: form.value.email,
+      password: form.value.password
     }
 
     return this.http.post<User>(`${appUrl}/users/login`, JSON.stringify(body),

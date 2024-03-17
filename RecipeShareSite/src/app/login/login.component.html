@@ -1,18 +1,28 @@
 <div class="login-page">
     <div class="container">
-        <div class="login-form">
+        <form class="login-form" #form="ngForm" (submit)="login(form)">
             <h2>Login Form</h2>
-            <p class="err" *ngIf="err">{{errMsg}}</p>
             <div>
                 <i class="fa-regular fa-user"></i>
-                <input type="text" placeholder="email" #ngEmail />
+                <input type="text" placeholder="email" name="email" id="email" autocomplete="email" ngModel
+                    #inputEmail="ngModel" required email />
             </div>
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required.</p>
+                <p class="error" *ngIf="inputEmail.errors?.['email']">Invalid e-mail.</p>
+            </ng-container>
             <div>
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="password" #ngPassword />
+                <input type="password" name="password" id="password" placeholder="password" ngModel
+                    #inputPassword="ngModel" required minlength="4" />
             </div>
-            <button (click)="login(ngEmail.value, ngPassword.value)">Login</button>
+            <ng-container *ngIf="inputPassword.touched">
+                <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required.</p>
+                <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password length more then 4 digits.</p>
+            </ng-container>
+            <p class="error" *ngIf="err">{{errMsg}}</p>
+            <button>Login</button>
             <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
-        </div>
+        </form>
     </div>
 </div>
