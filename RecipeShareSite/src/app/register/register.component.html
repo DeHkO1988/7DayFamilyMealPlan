@@ -4,20 +4,37 @@
             <h2>Registration Form</h2>
             <div>
                 <i class="fa-regular fa-user"></i>
-                <input type="text" placeholder="DeHkO" id="username" name="username" ngModel #inputUsername="ngModel" autocomplete="name" />
+                <input type="text" placeholder="DeHkO" id="username" name="username" ngModel #inputUsername="ngModel"
+                    autocomplete="name" required minlength="3" />
             </div>
+            <ng-container *ngIf="inputUsername.touched">
+                <p class="error" *ngIf="inputUsername.errors?.['required']">Username is required.</p>
+                <p class="error" *ngIf="inputUsername.errors?.['minlength']">Username length more then 3 chars.</p>
+            </ng-container>
             <div>
                 <i class="fa-regular fa-envelope"></i>
-                <input type="text" name="email" id="imail" placeholder="deni@abv.bg" ngModel #inputEmail="ngModel" autocomplete="email"/>
+                <input type="text" name="email" id="imail" placeholder="deni@abv.bg" ngModel #inputEmail="ngModel"
+                    autocomplete="email" required email/>
             </div>
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required.</p>
+                <p class="error" *ngIf="inputEmail.errors?.['email']">Invalid e-mail.</p>
+            </ng-container>
             <div>
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="*****" ngModel #inputPassword="ngModel" />
+                <input type="password" name="password" id="password" placeholder="*****" ngModel
+                    #inputPassword="ngModel" required minlength="4"/>
             </div>
+            <ng-container *ngIf="inputPassword.touched">
+                <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required.</p>
+                <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password length more then 4 digits.</p>
+            </ng-container>
             <div>
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="repeatPassword" placeholder="*****" ngModel #inputRepeatPassword="ngModel" />
+                <input type="password" name="repeatPassword" placeholder="*****" ngModel
+                    #inputRepeatPassword="ngModel"  />
             </div>
+            <p class="error" *ngIf="err">{{err}}</p>
             <button>Create Account</button>
             <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
         </form>

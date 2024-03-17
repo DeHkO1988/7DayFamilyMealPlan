@@ -10,9 +10,17 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent {
 
+  err: string | undefined;
+
+
   constructor(private userService: UserApiService, private router: Router) { }
 
   register(form: NgForm): void {
+
+    if (form.value.password !== form.value.repeatPassword) {
+      this.err = "Password missmatch!";
+      return;
+    };
 
     if (form.invalid) {
       return;
@@ -22,8 +30,9 @@ export class RegisterComponent {
     this.userService.register(form).subscribe({
       next: data => {
         if (data.error) {
+          this.err = data.error;
           console.log(data.error);
-          return
+          return;
         } else {
           this.userService.user = data;
           localStorage.setItem('user', JSON.stringify(data));
