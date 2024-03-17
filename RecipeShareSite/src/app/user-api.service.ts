@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { User } from './types/user';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -49,13 +50,15 @@ export class UserApiService {
     localStorage.removeItem("user");
   };
 
-  register(username: string, email: string, password: string, repeatPassword: string) {
+  register(form: NgForm) {
+    
     const { appUrl } = environment;
+
     const body = {
-      username: username,
-      email: email,
-      password: password,
-      repeatPassword: repeatPassword
+      username: form.value.username,
+      email: form.value.email,
+      password: form.value.password,
+      repeatPassword: form.value.repeatPassword
     }
 
     return this.http.post<User>(`${appUrl}/users/register`, JSON.stringify(body), {

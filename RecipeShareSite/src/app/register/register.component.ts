@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserApiService } from '../user-api.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -11,8 +12,14 @@ export class RegisterComponent {
 
   constructor(private userService: UserApiService, private router: Router) { }
 
-  register(username: string, email: string, password: string, repeatPassword: string): void {
-    this.userService.register(username, email, password, repeatPassword).subscribe({
+  register(form: NgForm): void {
+
+    if (form.invalid) {
+      return;
+    };
+
+
+    this.userService.register(form).subscribe({
       next: data => {
         if (data.error) {
           console.log(data.error);

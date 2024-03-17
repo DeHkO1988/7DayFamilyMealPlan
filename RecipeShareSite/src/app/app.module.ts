@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { DetailRecipeComponent } from './detail-recipe/detail-recipe.component';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
